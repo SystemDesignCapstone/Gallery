@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gallery Renders In Debug should render correctly in "debug" mode 1`] = `
+<div
+  className="hero-header hero-test"
+>
+  <Desktop>
+    <MainHero
+      images={
+        Object {
+          "mainPicture": Object {
+            "_id": "5bd67ab5aa60ca097666899c",
+            "alt": "Little house in Paris, Loft, Canal",
+            "url": "https://s3-us-west-1.amazonaws.com/airjld-photos/174db9b0-52f1-4611-a49e-50c160b80534.jpg",
+          },
+        }
+      }
+    />
+    <SideBar1 />
+    <SideBar2 />
+  </Desktop>
+  <Tablet>
+    <MainHero
+      images={
+        Object {
+          "mainPicture": Object {
+            "_id": "5bd67ab5aa60ca097666899c",
+            "alt": "Little house in Paris, Loft, Canal",
+            "url": "https://s3-us-west-1.amazonaws.com/airjld-photos/174db9b0-52f1-4611-a49e-50c160b80534.jpg",
+          },
+        }
+      }
+    />
+    <SideBar1 />
+  </Tablet>
+  <Mobile>
+    <MainHero
+      images={
+        Object {
+          "mainPicture": Object {
+            "_id": "5bd67ab5aa60ca097666899c",
+            "alt": "Little house in Paris, Loft, Canal",
+            "url": "https://s3-us-west-1.amazonaws.com/airjld-photos/174db9b0-52f1-4611-a49e-50c160b80534.jpg",
+          },
+        }
+      }
+    />
+  </Mobile>
+</div>
+`;
