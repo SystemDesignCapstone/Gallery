@@ -15,8 +15,12 @@ module.exports = {
         include : SRC_DIR,
         loader : 'babel-loader',
         query: {
-          presets: ['@babel/preset-react', '@babel/preset-env', 'babel-jest']
+          presets: ['@babel/preset-react', '@babel/preset-env']
         }
+      },
+      {
+        exclude: ['node_modules'],
+        loader: 'babel-loader'
       }
     ]
   }

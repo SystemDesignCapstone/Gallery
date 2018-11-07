@@ -18,7 +18,7 @@ class Gallery extends React.Component {
   render() {
     console.log(this.props, 'from Gallery')
     return (
-      <div className="hero-header">
+      <div className="hero-header hero-test">
         <Desktop>
           <MainHero images={this.props.props} press={this.props.press} />
           <SideBar1 images={this.props.props} press={this.props.press} />

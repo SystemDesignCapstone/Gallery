@@ -50,7 +50,8 @@ body {
   width: 25%;
   background-color: #eee;
   height: 335px !important;
-
+  position: relative !important;
+  overflow: hidden !important;
 }
 
 .sidebar-two {
@@ -58,6 +59,8 @@ body {
   width: 25%;
   background-color: #ccc;
   height: 335px !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
 .image-holder {

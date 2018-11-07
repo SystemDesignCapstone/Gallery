@@ -91,16 +91,6 @@ class Lightbox extends React.Component {
   }
 }
 
-// const Slide = ({ image, caption }) => {
-//   const styles = {
-//     backgroundImage: `url(${image})`,
-//     backgroundSize: 'cover',
-//     backgroundRepeat: 'no-repeat',
-//     backgroundPosition: '50% 60%'
-//   }
-//   return <div className="slide" style={styles}><div className="captions">{caption}</div></div>
-// }
-
 const Slide = ({ image, caption }) => {
   const styles = {
 
