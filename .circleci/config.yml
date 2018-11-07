@@ -8,6 +8,7 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:6.13.1
+      - image: circleci/mongo:4.0.3
       
     working_directory: ~/repo
 
@@ -15,4 +16,11 @@ jobs:
       - checkout
       - run: npm install
       - run: npm test
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
 
