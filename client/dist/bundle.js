@@ -128,7 +128,6 @@ eval("/* WEBPACK VAR INJECTION */(function(process) {\n\nif (process.env.NODE_EN
 /***/ }),
 /* 5 */
 /* unknown exports provided */
-/* exports used: default */
 /*!******************************!*\
   !*** ./~/react-dom/index.js ***!
   \******************************/
@@ -267,7 +266,7 @@ eval("/* WEBPACK VAR INJECTION */(function(process) {\n\nif (process.env.NODE_EN
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(__webpack_exports__, \"__esModule\", { value: true });\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ 2);\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(/*! react-dom */ 5);\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Site_jsx__ = __webpack_require__(/*! ./components/Site.jsx */ 17);\n\n\n\n__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_Site_jsx__[\"a\" /* default */], null), document.getElementById('app'));//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTYuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jbGllbnQvc3JjL2luZGV4LmpzeD8yMWMzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgUmVhY3RET00gZnJvbSAncmVhY3QtZG9tJztcbmltcG9ydCBTaXRlIGZyb20gJy4vY29tcG9uZW50cy9TaXRlLmpzeCc7XG5cblJlYWN0RE9NLnJlbmRlcig8U2l0ZSAvPiwgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2FwcCcpKTtcblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gLi9jbGllbnQvc3JjL2luZGV4LmpzeCJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBRUE7Ozs7OzsiLCJzb3VyY2VSb290IjoiIn0=");
+eval("Object.defineProperty(__webpack_exports__, \"__esModule\", { value: true });\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Site_jsx__ = __webpack_require__(/*! ./components/Site.jsx */ 17);\n// import React from 'react';\n// import ReactDOM from 'react-dom';\n // ReactDOM.render(<Site />, document.getElementById('app'));\n\nwindow.Gallery = __WEBPACK_IMPORTED_MODULE_0__components_Site_jsx__[\"a\" /* default */];//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTYuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jbGllbnQvc3JjL2luZGV4LmpzeD8yMWMzIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIGltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG4vLyBpbXBvcnQgUmVhY3RET00gZnJvbSAncmVhY3QtZG9tJztcbmltcG9ydCBHYWxsZXJ5IGZyb20gJy4vY29tcG9uZW50cy9TaXRlLmpzeCc7XG5cbi8vIFJlYWN0RE9NLnJlbmRlcig8U2l0ZSAvPiwgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2FwcCcpKTtcbndpbmRvdy5HYWxsZXJ5ID0gR2FsbGVyeVxuXG5cbi8vIFdFQlBBQ0sgRk9PVEVSIC8vXG4vLyAuL2NsaWVudC9zcmMvaW5kZXguanN4Il0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUVBOzsiLCJzb3VyY2VSb290IjoiIn0=");
 
 /***/ }),
 /* 17 */
