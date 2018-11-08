@@ -20,7 +20,8 @@ class Site extends React.Component {
   }
 
   grabPhotos() {
-    fetch('/listings')
+    let photoNumber = Number(window.location.pathname.replace(/\//, ''));
+    fetch(`/listings/${this.randomList()}`)
       .then(res => {
         return res.json();
       })
@@ -36,6 +37,10 @@ class Site extends React.Component {
       })
   }
 
+  randomList() {
+    let random = Math.floor(Math.random() * 599) + 1;
+    return random;
+  }
 
   onPhotoPress() {
     this.setState({
