@@ -17,4 +17,14 @@ app.get('/listings', (req, res) => {
   });
 });
 
+app.get('/listings/:id', (req, res) => {
+  Listing.find({photoId: req.params.id}, (err, listing) => {
+    if (err) {
+      throw err;
+    } else {
+      return res.send(listing)
+    }
+  })
+})
+
 module.exports = app

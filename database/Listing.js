@@ -5,6 +5,8 @@ mongoose.Promise = global.Promise;
 
 const listingSchema = new mongoose.Schema({
   title: String,
+  photoId: Number,
+  id: Number,
   urls: [
     {
       url: String,
