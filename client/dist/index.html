@@ -7,13 +7,34 @@
   <link type="text/css" rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div id="app"></div>
-<script type="text/javascript" src="bundle.js"></script>
+<div id="gallery"></div>
+<!-- <div id="booking"></div>
+<div id="details"></div>
+<div id="reviews"></div> -->
+<script type="text/javascript" src="http://localhost:1128/bundle.js"></script>
 <script type="text/javascript" src="https://unpkg.com/react@16.6.1/umd/react.development.js"></script>
 <script type="text/javascript" src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-<script>
+<!-- <script>
   ReactDOM.render(
     React.createElement(Gallery), document.getElementById('app'));
+</script> -->
+<script>
+  ReactDOM.render(
+    React.createElement(Gallery),
+    document.getElementById('gallery')
+  );
+  // ReactDOM.render(
+  //   React.createElement(Booking),
+  //   document.getElementById('booking')
+  // );
+  // ReactDOM.render(
+  //   React.createElement(Details),
+  //   document.getElementById('details')
+  // );
+  // ReactDOM.render(
+  //   React.createElement(Reviews),
+  //   document.getElementById('reviews')
+  // );
 </script>
 </body>
 </html>
