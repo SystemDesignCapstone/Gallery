@@ -17,7 +17,7 @@ let data = {
 
 s3.listObjects(data, (err, info) => {
   if (err) {
-    console.log('Error!!!!')
+    console.log('Error!!!')
   } else {
     let baseURL = 'https://s3-us-west-1.amazonaws.com/airjld-photos/';
     for (var x = 1; x < 600; x++) {
