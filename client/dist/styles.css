@@ -172,6 +172,15 @@ body {
   color: #222;
 }
 
+@media only screen and (min-width: 576px) {
+  .sidebar-one {
+    display: none!important;
+  }
+  .sidebar-two {
+    display: none!important;
+  }
+}
+
 
 @media only screen and (min-width:768px) {
   .mainHero {
@@ -181,6 +190,10 @@ body {
   .sidebar-one {
     width: 25% !important;
     height: 442px !important;
+    display: block!important;
+  }
+  .sidebar-two {
+    display: none!important;
   }
 }
 
@@ -192,9 +205,11 @@ body {
   .sidebar-one {
     width: 25% !important;
     height: 592px !important;
+    display: block!important;
   }
   .sidebar-two {
     width: 25% !important;
     height: 592px !important;
+    display: block!important;
   }
 }
