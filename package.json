@@ -68,10 +68,5 @@
     "supertest": "^3.3.0",
     "webpack": "^2.2.1",
     "webpack-cli": "^3.1.2"
-  },
-  "main": "client/dist/bundle.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AirJLD/Gallery.git"
   }
 }
