@@ -17,10 +17,10 @@ class Site extends React.Component {
     }
     this.onPhotoPress = this.onPhotoPress.bind(this)
     this.onClosePress = this.onClosePress.bind(this)
+    
   }
 
   grabPhotos() {
-    let photoNumber = Number(window.location.pathname.replace(/\//, ''));
     fetch(`/listings/${this.randomList()}`)
       .then(res => {
         return res.json();
