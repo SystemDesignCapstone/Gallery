@@ -4,7 +4,9 @@
   "description": "our airjld app",
   "author": "",
   "license": "",
-  "engines": "",
+  "engines": {
+    "node": ">=6.13.0"
+  },
   "eslintIgnore": [
     "./node_modules"
   ],
