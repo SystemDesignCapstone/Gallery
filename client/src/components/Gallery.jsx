@@ -9,7 +9,6 @@ import SideBar2 from './SideBar2.jsx';
 class Gallery extends React.Component {
   constructor(props) {
     super(props);
-    
   }
 
   render() {
