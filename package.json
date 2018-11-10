@@ -1,7 +1,7 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
+  "name": "airjld",
+  "version": "1.0.0",
+  "description": "our airjld app",
   "author": "",
   "license": "",
   "engines": {
@@ -16,7 +16,7 @@
     ]
   },
   "scripts": {
-    "start": "server/index.js",
+    "start": "node server/index.js",
     "dev:react": "webpack -d --watch",
     "db:setup": "node database/seed.js",
     "lint": "eslint ./database ./server",
