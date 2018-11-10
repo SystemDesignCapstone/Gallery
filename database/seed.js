@@ -4,8 +4,8 @@ const aws = require('aws-sdk');
 const faker = require('faker');
 
 aws.config.update({
-  accessKeyId: 'AKIAIGKQSVQXYSYAEPQA',
-  secretAccessKey: 'UKivoxAqeAuWmHpW1MwKRK9GKl767GXeNgLgk6x8',
+  accessKeyId: 'AKIAJ37LOHOQM3TUQIUQ',
+  secretAccessKey: 'Lyk3dCEP+5kDsg0mrvNWBft6ka0/PfS8IWRfG6OQ',
   region: 'us-west-2'
 });
 

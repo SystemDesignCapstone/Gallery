@@ -16,7 +16,7 @@
     ]
   },
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "server/index.js",
     "dev:react": "webpack -d --watch",
     "db:setup": "node database/seed.js",
     "lint": "eslint ./database ./server",
