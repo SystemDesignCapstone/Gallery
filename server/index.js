@@ -8,6 +8,15 @@ const port = process.env.PORT || 1128;
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 app.get('/listings', (req, res) => {
   Listing.find((err, listing) => {
     if (err) {
