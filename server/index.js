@@ -23,7 +23,6 @@ app.get('/listings', (req, res) => {
       console.log('hey, there was an error on master listing')
       throw err;
     } else {
-      console.log('hey, this was a success on master listing', listing)
       return res.send(listing);
     }
   });
@@ -35,7 +34,6 @@ app.get('/listings/:id', (req, res) => {
       console.log('hey, there was an error on id')
       throw err;
     } else {
-      console.log('hey, this was a successful connection', listing)
       return res.send(listing)
     }
   })
