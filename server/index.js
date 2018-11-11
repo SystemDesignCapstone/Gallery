@@ -34,6 +34,7 @@ app.get('/listings/:id', (req, res) => {
       console.log('hey, there was an error on id')
       throw err;
     } else {
+      console.log('this is the listing', listing)
       return res.send(listing)
     }
   })
