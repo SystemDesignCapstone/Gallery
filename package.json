@@ -2,8 +2,8 @@
   "name": "airjld",
   "version": "1.0.0",
   "description": "our airjld app",
-  "author": "",
-  "license": "",
+  "author": "dmoney",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
