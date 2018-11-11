@@ -21,7 +21,9 @@ class Site extends React.Component {
   }
 
   grabPhotos() {
-    fetch(`http://specialtry-env.bhn5ugntnq.us-east-1.elasticbeanstalk.com/listings/${this.randomList()}`)
+    const rand = Math.floor(Math.random() * 101);
+    const id = Number(window.location.pathname.replace(/\//, '')) || rand;
+    fetch(`http://specialtry-env.bhn5ugntnq.us-east-1.elasticbeanstalk.com/listings/${id}`)
       .then(res => {
         return res.json();
       })

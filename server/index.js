@@ -20,8 +20,10 @@ app.use((req, res, next) => {
 app.get('/listings', (req, res) => {
   Listing.find((err, listing) => {
     if (err) {
+      console.log('hey, there was an error on master listing')
       throw err;
     } else {
+      console.log('hey, this was a success on master listing')
       return res.send(listing);
     }
   });
@@ -30,8 +32,10 @@ app.get('/listings', (req, res) => {
 app.get('/listings/:id', (req, res) => {
   Listing.find({photoId: req.params.id}, (err, listing) => {
     if (err) {
+      console.log('hey, there was an error on id')
       throw err;
     } else {
+      console.log('hey, this was a successful connection')
       return res.send(listing)
     }
   })
