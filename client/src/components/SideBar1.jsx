@@ -18,10 +18,10 @@ class SideBar1 extends React.Component {
     return (
     <div className="sidebar-one">
       <div className="image-holder">
-        <img onClick={this.props.press} src={this.props.images.picture1.url} alt={this.props.images.picture1.alt} className="img-fluid img-animation"/>
+        <img onClick={this.props.press} src={this.props.images.picture1} className="img-fluid img-animation"/>
       </div>
       <div className="image-holder">
-        <img onClick={this.props.press} src={this.props.images.picture2.url} alt={this.props.images.picture2.alt} className="img-fluid img-animation"/>
+        <img onClick={this.props.press} src={this.props.images.picture2} className="img-fluid img-animation"/>
       </div>
     </div>
     )

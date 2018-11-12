@@ -9,10 +9,10 @@ class SideBar2 extends React.Component {
     return (
     <div className="sidebar-two">
       <div className="image-holder">
-        <img onClick={this.props.press} src={this.props.images.picture3.url} alt={this.props.images.picture3.alt} className="img-fluid img-animation"/>
+        <img onClick={this.props.press} src={this.props.images.picture3} alt={this.props.images.picture3.alt} className="img-fluid img-animation"/>
       </div>
       <div className="image-holder">
-        <img onClick={this.props.press} src={this.props.images.picture4.url} alt={this.props.images.picture4.alt} className="img-fluid img-animation"/>
+        <img onClick={this.props.press} src={this.props.images.picture4} alt={this.props.images.picture4.alt} className="img-fluid img-animation"/>
       </div>
     </div>
     )
