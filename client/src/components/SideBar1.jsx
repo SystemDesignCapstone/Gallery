@@ -4,6 +4,13 @@ import MainHero from './MainHero.jsx';
 import Responsive from 'react-responsive';
 
 class SideBar1 extends React.Component {
+  static defaultProps = {
+    images: {
+      picture1: 'https://s3-us-west-1.amazonaws.com/airjld-photos/photo-1508004842-763773906651.jpg',
+      picture2: 'https://s3-us-west-1.amazonaws.com/airjld-photos/photo-1499960789818-652a2fff0c84.jpg'
+    }
+  }
+
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this)
