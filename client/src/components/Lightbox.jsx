@@ -67,7 +67,7 @@ class Lightbox extends React.Component {
     return (
       <div>
       <div className="closeArrow closeMe">
-        <i className="fal fa-times fa-3x" onClick={this.props.close}></i>
+        <i className="fas fa-times fa-3x" onClick={this.props.close}></i>
       </div>
       <div className="slider">
         <div className="slider-wrapper"
