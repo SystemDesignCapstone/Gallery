@@ -29,7 +29,7 @@ app.get('/listings', (req, res) => {
 });
 
 app.get('/listings/:id', (req, res) => {
-  Listing.find({photoId: req.params.id}, (err, listing) => {
+  Listing.find({id: req.params.id}, (err, listing) => {
     if (err) {
       console.log('hey, there was an error on id')
       throw err;
