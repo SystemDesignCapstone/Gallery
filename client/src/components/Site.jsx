@@ -24,7 +24,7 @@ class Site extends React.Component {
     const rand = Math.floor(Math.random() * 500) + 1;
     fetch(`http://airjld2-env.nhf7jyknam.us-east-2.elasticbeanstalk.com/listings/${rand}`)
       .then(res => {
-        console.log('this is the result')
+        console.log('this is the result', res)
         return res.json();
       })
       .then(result => {
