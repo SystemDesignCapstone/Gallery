@@ -24,10 +24,10 @@ class Site extends React.Component {
     const rand = Math.floor(Math.random() * 100) + 1;
     fetch(`http://airjld2-env.nhf7jyknam.us-east-2.elasticbeanstalk.com/listings/${rand}`)
       .then(res => {
-        console.log('this is the result', res.json())
         return res.json();
       })
       .then(result => {
+        console.log(result, 'this is the result')
         this.setState({
           mainPicture: result[0].urls[0],
           picture1: result[0].urls[1],
