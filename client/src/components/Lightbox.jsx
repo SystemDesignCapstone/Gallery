@@ -77,6 +77,7 @@ class Lightbox extends React.Component {
           }}>
             {
               this.state.pictures.map((image, i) => (
+                console.log(image.urls, 'the props in image urls')
                 <Slide key={i} image={image.urls} caption={image.alt}/>
               ))
             }
