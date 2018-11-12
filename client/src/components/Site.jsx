@@ -28,6 +28,9 @@ class Site extends React.Component {
       })
       .then(result => {
         console.log(result, 'this is the result')
+        console.log(result[0].urls, 'yup 0 urls')
+        console.log(result[1].urls, 'yup 1 urls')
+        console.log(result[2].urls, 'yup 2 urls')
         this.setState({
           mainPicture: result[0].urls[0],
           picture1: result[0].urls[1],
