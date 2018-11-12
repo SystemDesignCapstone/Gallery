@@ -77,7 +77,7 @@ class Lightbox extends React.Component {
           }}>
             {
               this.state.pictures.map((image, i) => (
-                <Slide key={i} image={image.url} caption={image.alt}/>
+                <Slide key={i} image={image.urls} caption={image.alt}/>
               ))
             }
         </div>
@@ -92,10 +92,7 @@ class Lightbox extends React.Component {
 }
 
 const Slide = ({ image, caption }) => {
-  const styles = {
-
-  }
-  return <div className="slide" style={styles}><img className="img-fluid" src={image} alt={caption}></img><div className="captions">{caption}</div></div>
+  return <div className="slide"><img className="img-fluid" src={image} alt={caption}></img><div className="captions">{caption}</div></div>
 }
 
 const LeftArrow = (props) => {
