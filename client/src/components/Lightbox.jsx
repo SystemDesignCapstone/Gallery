@@ -98,7 +98,7 @@ const Slide = ({ image, caption }) => {
 const LeftArrow = (props) => {
   return (
     <div className="backArrow arrow" onClick={props.goToPrevSlide}>
-      <i className="fal fa-angle-left fa-10x"></i>
+      <i className="fas fa-angle-left fa-10x"></i>
     </div>
   );
 }
@@ -107,7 +107,7 @@ const LeftArrow = (props) => {
 const RightArrow = (props) => {
   return (
     <div className="nextArrow arrow" onClick={props.goToNextSlide}>
-      <i className="fal fa-angle-right fa-10x"></i>
+      <i className="fas fa-angle-right fa-10x"></i>
     </div>
   );
 }
