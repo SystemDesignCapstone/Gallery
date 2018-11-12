@@ -31,16 +31,13 @@ class Site extends React.Component {
         console.log(result[0].urls, 'yup 0 urls')
         console.log(result[1].urls, 'yup 1 urls')
         console.log(result[2].urls, 'yup 2 urls')
-        for (var x = 0; x < result.length; x++) {
-            console.log(x)
-        }
         this.setState({
           mainPicture: result[0].urls,
           picture1: result[1].urls,
           picture2: result[2].urls,
           picture3: result[3].urls,
           picture4: result[4].urls,
-          pictures: result[x].urls
+          pictures: result
         })
       })
   }
