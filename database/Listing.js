@@ -7,40 +7,8 @@ const listingSchema = new mongoose.Schema({
   title: String,
   photoId: Number,
   id: Number,
-  urls: [
-    {
-      url: String,
-      alt: String,
-    },
-    {
-      url: String,
-      alt: String,
-    },
-    {
-      url: String,
-      alt: String,
-    },
-    {
-      url: String,
-      alt: String,
-    },
-    {
-      url: String,
-      alt: String,
-    },
-    {
-      url: String,
-      alt: String,
-    },
-    {
-      url: String,
-      alt: String,
-    },
-    {
-      url: String,
-      alt: String,
-    },
-  ],
+  urls: String,
+  alt: String
 });
 
 const Listing = mongoose.model('Listing', listingSchema);

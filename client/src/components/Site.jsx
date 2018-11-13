@@ -21,18 +21,23 @@ class Site extends React.Component {
   }
 
   grabPhotos() {
-    fetch(`http://specialtry-env.bhn5ugntnq.us-east-1.elasticbeanstalk.com/listings/${this.randomList()}`)
+    const rand = Math.floor(Math.random() * 100) + 1;
+    fetch(`http://airjld2-env.nhf7jyknam.us-east-2.elasticbeanstalk.com/listings/${rand}`)
       .then(res => {
         return res.json();
       })
       .then(result => {
+        console.log(result, 'this is the result')
+        console.log(result[0].urls, 'yup 0 urls')
+        console.log(result[1].urls, 'yup 1 urls')
+        console.log(result[2].urls, 'yup 2 urls')
         this.setState({
-          mainPicture: result[0].urls[0],
-          picture1: result[0].urls[1],
-          picture2: result[0].urls[2],
-          picture3: result[0].urls[3],
-          picture4: result[0].urls[4],
-          pictures: result[0].urls
+          mainPicture: result[0].urls,
+          picture1: result[1].urls,
+          picture2: result[2].urls,
+          picture3: result[3].urls,
+          picture4: result[4].urls,
+          pictures: result
         })
       })
   }

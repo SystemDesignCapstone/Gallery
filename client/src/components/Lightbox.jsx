@@ -63,11 +63,11 @@ class Lightbox extends React.Component {
   }
 
   render() {
-    console.log(this.props, 'props in lightbox')
+    console.log(this.state.pictures, 'state pictures in lightbox')
     return (
       <div>
       <div className="closeArrow closeMe">
-        <i className="fal fa-times fa-3x" onClick={this.props.close}></i>
+        <i className="fas fa-times fa-3x" onClick={this.props.close}></i>
       </div>
       <div className="slider">
         <div className="slider-wrapper"
@@ -77,7 +77,7 @@ class Lightbox extends React.Component {
           }}>
             {
               this.state.pictures.map((image, i) => (
-                <Slide key={i} image={image.url} caption={image.alt}/>
+                <Slide key={i} image={image.urls} caption={image.alt}/>
               ))
             }
         </div>
@@ -92,16 +92,13 @@ class Lightbox extends React.Component {
 }
 
 const Slide = ({ image, caption }) => {
-  const styles = {
-
-  }
-  return <div className="slide" style={styles}><img className="img-fluid" src={image} alt={caption}></img><div className="captions">{caption}</div></div>
+  return <div className="slide"><img className="img-fluid" src={image} alt={caption}></img><div className="captions">{caption}</div></div>
 }
 
 const LeftArrow = (props) => {
   return (
     <div className="backArrow arrow" onClick={props.goToPrevSlide}>
-      <i className="fal fa-angle-left fa-10x"></i>
+      <i className="fas fa-angle-left fa-10x"></i>
     </div>
   );
 }
@@ -110,7 +107,7 @@ const LeftArrow = (props) => {
 const RightArrow = (props) => {
   return (
     <div className="nextArrow arrow" onClick={props.goToNextSlide}>
-      <i className="fal fa-angle-right fa-10x"></i>
+      <i className="fas fa-angle-right fa-10x"></i>
     </div>
   );
 }
