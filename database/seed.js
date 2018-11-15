@@ -1,34 +1,52 @@
-const mongoose = require('mongoose');
-const Listing = require('./Listing.js');
-const aws = require('aws-sdk');
+const { Readable } = require('stream');
+const mariadb = require('mariadb');
 const faker = require('faker');
 
-let s3 = new aws.S3();
-
-let data = {
-  Bucket: 'airjld-photos'
-}
-
-s3.listObjects(data, (err, info) => {
-  if (err) {
-    console.log('Error!!!')
-  } else {
-    let baseURL = 'https://s3-us-west-1.amazonaws.com/airjld-photos/';
-    for (var x = 1; x < 100; x++) {
-      let sampleListing = {};
-      sampleListing.title = faker.lorem.sentence();
-      sampleListing.photoId = x;
-      sampleListing.id = Math.floor(Math.random() * 100) + 1;
-      sampleListing.urls = baseURL + info.Contents[x].Key;
-      sampleListing.alt = faker.lorem.sentence();
-      Listing.create(sampleListing).then(() => mongoose.disconnect());
+const inStream = new Readable({
+  read() {
+    if (x <= 10000) {
+      const title = faker.lorem.sentence();
+      const listingId = x;
+      const id = Math.floor(Math.random() * 100) + 1;
+      const alt = faker.lorem.sentence();
+      this.push(`${id}\t${listingId}\t${title}\t${alt}`);
+    } else {
+      this.push(null);
     }
-  }     
+  },
 });
 
-// const insertListings = () => {
-//   Listing.create(listingSample)
-//     .then(() => mongoose.disconnect());
-// };
-
-// insertListings();
+let x = 1;
+const db = mariadb
+  .createConnection({
+    socketPath: '/run/mysqld/mysqld.sock',
+    database: 'sdc',
+    user: 'root',
+  })
+  .then(connection => {
+    connection
+      .beginTransaction()
+      .then(() => {
+        const insert = () => {
+          const chunk = String(inStream.read());
+          if (chunk !== 'null') {
+            connection
+              .query(
+                'INSERT INTO myTable (id, listingId, title, alt) VALUES (?, ?, ?, ?)',
+                String(chunk).split('\t'),
+              )
+              .then(() => {
+                x++;
+                insert();
+              })
+              .catch(err => console.log(err));
+          } else {
+          }
+        };
+        insert();
+      })
+      .then(() => {
+        console.log('Committing…');
+        connection.commit().then(() => connection.end());
+      });
+  });
