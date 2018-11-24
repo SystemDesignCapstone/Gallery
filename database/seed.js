@@ -1,29 +1,36 @@
 const { Readable } = require('stream');
 const faker = require('faker');
 
-let listingId = 1;
-let id = 1;
-let photoNumber = 1;
-let maxPhotoNumber = Math.floor(Math.random() * 7) + 3;
+const updateData = ({ listingId, id, photoNumber }) => {
+  const output = {
+    listingId,
+    photoNumber: photoNumber + 1,
+    id: id + 1,
+    maxPhotoNumber: Math.floor(Math.random() * 35) + 3,
+    photoId: Math.floor(Math.random() * 600) + 1,
+    title: faker.lorem.sentence(),
+    alt: faker.lorem.sentence(),
+  };
+
+  if (output.photoNumber > output.maxPhotoNumber) {
+    output.listingId += 1;
+    output.photoNumber = 0;
+  }
+
+  return output;
+};
+
+let currentData = { listingId: 1, id: 0, photoNumber: 0 };
 
 const inStream = new Readable({
   read() {
-    if (listingId <= 10000000) {
-      const title = faker.lorem.sentence();
-      const alt = faker.lorem.sentence();
-      const photoId = Math.floor(Math.random() * 600) + 1;
-
-      this.push(`${listingId}\t${id}\t${alt}\t${photoId}\t${title}\n`);
-      photoNumber++;
-      if (photoNumber > maxPhotoNumber) {
-        photoNumber = 0;
-        maxPhotoNumber = Math.floor(Math.random() * 7) + 3;
-        listingId++;
-      }
-      id++;
-    } else {
-      this.push(null);
+    let chunk = '';
+    for (let i = 0; i < 4; i++) {
+      currentData = updateData(currentData);
+      const { listingId, id, alt, photoId, title } = currentData;
+      chunk += `${listingId}\t${id}\t${alt}\t${photoId}\t${title}\n`;
     }
+    currentData.listingId <= 1e7 ? this.push(chunk) : this.push(null);
   },
 });
 inStream.pipe(process.stdout);
