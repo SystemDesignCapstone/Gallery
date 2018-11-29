@@ -1,8 +1,12 @@
 const mariadb = require('mariadb');
 const Lynx = require('lynx');
+const fs = require('fs');
+const zlib = require('zlib');
 
 const metrics = new Lynx('localhost', 8125);
 const Listing = {};
+let start = 1;
+const target = 10000000;
 
 mariadb
   .createConnection({
@@ -11,7 +15,7 @@ mariadb
     user: 'root',
   })
   .then(conn => {
-    Listing.find = (data, cb) => {
+    Listing.find = data => {
       const pictures = [];
 
       conn
@@ -26,13 +30,20 @@ mariadb
             id,
             alt,
             title,
-            urls: `https://s3-us-west-2.amazonaws.com/sdc-trailblazer-gallery/img${photoId}.jpg`,
+            photoId,
           });
         })
         .on('end', () => {
-          cb(null, pictures);
+          zlib.gzip(JSON.stringify(pictures), (err, res) => {
+            fs.writeFileSync(`s3Data/${data.id}`, res, 'utf8');
+          });
+          if (++start <= target) {
+            if (start % 100000 === 0) {
+              console.log('done with: ', start);
+            }
+            Listing.find({ id: start });
+          }
         });
     };
+    Listing.find({ id: start });
   });
-
-module.exports = Listing;

@@ -25,6 +25,7 @@ module.exports = {
       'error',
       { devDependencies: ['**/*.test.js', '**/*config.js', '*setupTests.js'] },
     ],
+    'import/no-unresolved': [ 2, {ignore: ['/k6test.js']}, ],
   },
   env: {
     browser: true,

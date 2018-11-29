@@ -9,7 +9,7 @@ const benchmarkSingleQuery = () => {
 
   time.startSelect = process.hrtime.bigint();
   conn
-    .execute(`SELECT count(*) FROM myTable WHERE listingId = ${9600000}`)
+    .execute(`SELECT * FROM myTable WHERE listingId = ${9600000}`)
     .then(() => {
       time.endSelect = process.hrtime.bigint();
       time.startInsert = process.hrtime.bigint();

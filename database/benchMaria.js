@@ -4,7 +4,6 @@ const mariadb = require('mariadb');
 const metrics = new Lynx('localhost', 8125);
 metrics.increment('meas.field');
 
-
 const benchmarkSingleQuery = () => {
   const time = { startConn: process.hrtime.bigint() };
   mariadb
@@ -16,7 +15,7 @@ const benchmarkSingleQuery = () => {
     .then(conn => {
       time.startSelect = process.hrtime.bigint();
       conn
-        .query(`SELECT count(*) FROM myTable WHERE listingId = ${9600000}`)
+        .query(`SELECT * FROM myTable WHERE listingId = ${9600000}`)
         .then(() => {
           time.endSelect = process.hrtime.bigint();
           time.startInsert = process.hrtime.bigint();
