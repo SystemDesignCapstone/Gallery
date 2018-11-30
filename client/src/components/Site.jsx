@@ -20,22 +20,28 @@ class Site extends React.Component {
   }
 
   grabPhotos() {
-    fetch('http://localhost:1128/listings')
+    fetch('http://localhost:3006/test/2')
       .then(res => {
         return res.json();
       })
-      .then(result => {
-        console.log(result, 'this is the result');
-        console.log(result[0].urls, 'yup 0 urls');
-        console.log(result[1].urls, 'yup 1 urls');
-        console.log(result[2].urls, 'yup 2 urls');
+      .then(results => {
+        results = results.map(result => {
+          result.urls = `https://s3-us-west-2.amazonaws.com/sdc-trailblazer-gallery/img${
+            result.photoid
+          }.jpg`;
+          return result;
+        });
+        console.log(results, 'this is the results');
+        console.log(results[0].urls, 'yup 0 urls');
+        console.log(results[1].urls, 'yup 1 urls');
+        console.log(results[2].urls, 'yup 2 urls');
         this.setState({
-          mainPicture: result[0].urls,
-          picture1: result[1].urls,
-          picture2: result[2].urls,
-          picture3: result[3].urls,
-          picture4: result[4].urls,
-          pictures: result,
+          mainPicture: results[0].urls,
+          picture1: results[1].urls,
+          picture2: results[2].urls,
+          picture3: results[3].urls,
+          picture4: results[4].urls,
+          pictures: results,
         });
       });
   }

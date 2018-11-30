@@ -1,10 +1,10 @@
 const { Readable } = require('stream');
 const faker = require('faker');
 
-const updateData = ({ listingId, id, photoNumber }) => {
+const updateData = ({ listingId, id, photoid }) => {
   const output = {
     listingId,
-    photoNumber: photoNumber + 1,
+    photoid: photoid + 1,
     id: id + 1,
     maxPhotoNumber: Math.floor(Math.random() * 35) + 3,
     photoId: Math.floor(Math.random() * 600) + 1,
@@ -12,15 +12,16 @@ const updateData = ({ listingId, id, photoNumber }) => {
     alt: faker.lorem.sentence(),
   };
 
-  if (output.photoNumber > output.maxPhotoNumber) {
+  if (output.photoid > output.maxPhotoNumber) {
     output.listingId += 1;
-    output.photoNumber = 0;
+    output.photoid = 0;
+    output.id = 0;
   }
 
   return output;
 };
 
-let currentData = { listingId: 1, id: 0, photoNumber: 0 };
+let currentData = { listingId: 1, id: 0, photoid: 0 };
 
 const inStream = new Readable({
   read() {

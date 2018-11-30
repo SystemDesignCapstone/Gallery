@@ -1,8 +1,8 @@
 {
   "name": "airjld",
   "version": "1.0.0",
-  "description": "our airjld app",
-  "author": "dmoney",
+  "description": "",
+  "author": "Daniel Sockwell",
   "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
