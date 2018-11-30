@@ -1,5 +1,5 @@
 import http from 'k6/http';
-let i = 9000000;
+let i = 1;
 export default function() {
-  http.get(`http://127.0.0.1:3006/listings/${i++}.json`);
+  http.get(`http://ec2-18-218-112-50.us-east-2.compute.amazonaws.com/listings/${i++}`);
 }

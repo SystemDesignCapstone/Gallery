@@ -1,21 +1,21 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const Lynx = require('lynx');
-const request = require('request');
+// const Lynx = require('lynx');
+// const request = require('request');
 
-const metrics = new Lynx('localhost', 8125);
+// const metrics = new Lynx('localhost', 8125);
 
-let pastRequests = 0;
-setInterval(() => {
-  request('http://localhost:3006/nginx_status', (err, res, body) => {
-    const cumulativeRequests = body.split('\n')[2].split(' ')[3];
-    const newRequests =
-      cumulativeRequests - (pastRequests || cumulativeRequests);
-    pastRequests = cumulativeRequests;
-    metrics.send({ 'gallery.nginxResponse': `${newRequests}|c` });
-  });
-}, 100);
+// let pastRequests = 0;
+// setInterval(() => {
+//   request('http://localhost:3006/nginx_status', (err, res, body) => {
+//     const cumulativeRequests = body.split('\n')[2].split(' ')[3];
+//     const newRequests =
+//       cumulativeRequests - (pastRequests || cumulativeRequests);
+//     pastRequests = cumulativeRequests;
+//     metrics.send({ 'gallery.nginxResponse': `${newRequests}|c` });
+//   });
+// }, 100);
 const app = express();
 const port = process.env.PORT || 1128;
 app.use(bodyParser.json());
