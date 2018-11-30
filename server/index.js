@@ -35,8 +35,16 @@ app.get('/test', (req, res) => {
   res.send('Hey guys!');
 });
 
-app.post('/test', (req, res) => {
-  res.send('quit poking me!');
+app.post('/listing/:id', (req, res) => {
+  res.send(`New entry added to listing ${req.params.id}(just kidding!)`);
+});
+
+app.put('/listing/:id', (req, res) => {
+  res.send(`Entry in listing ${req.params.id} updated (just kidding!)`);
+});
+
+app.delete('/listing/:id', (req, res) => {
+  res.send(`Entry in listing ${req.params.id} deleted (just kidding)`);
 });
 
 app.post('/listings/:id', (req, res) => {
