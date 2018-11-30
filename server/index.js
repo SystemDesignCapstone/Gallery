@@ -40,6 +40,7 @@ app.post('/test', (req, res) => {
 });
 
 app.post('/listings/:id', (req, res) => {
+  console.log('POST to /listings/:id');
   res.send('quit poking me!');
 });
 // app.get('/listings', (req, res) => {
