@@ -20,7 +20,8 @@ class Site extends React.Component {
   }
 
   grabPhotos() {
-    fetch('http://localhost:3006/test/2')
+    const random = Math.floor(Math.random() * 1000);
+    fetch(`https://s3.us-east-2.amazonaws.com/sdc-gallery/${random}`)
       .then(res => {
         return res.json();
       })
