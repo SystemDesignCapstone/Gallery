@@ -1,10 +1,10 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-// const Lynx = require('lynx');
+const Lynx = require('lynx');
 // const request = require('request');
 
-// const metrics = new Lynx('localhost', 8125);
+const metrics = new Lynx('localhost', 8125);
 
 // let pastRequests = 0;
 // setInterval(() => {
@@ -37,6 +37,7 @@ app.get('/test', (req, res) => {
 
 app.post('/listing/:id', (req, res) => {
   res.send(`New entry added to listing ${req.params.id}(just kidding!)`);
+  metrics.increment('gallery.post');
 });
 
 app.put('/listing/:id', (req, res) => {
